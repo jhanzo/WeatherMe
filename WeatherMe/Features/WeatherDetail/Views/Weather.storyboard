@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tPN-li-tJL">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham Narrow Bold.otf">
+            <string>GothamNarrow-Bold</string>
+        </array>
+        <array key="Gotham Narrow Book.otf">
+            <string>GothamNarrow-Book</string>
+        </array>
+        <array key="Gotham Narrow Light.otf">
+            <string>GothamNarrow-Light</string>
+        </array>
+        <array key="Gotham Narrow Thin.otf">
+            <string>GothamNarrow-Thin</string>
+        </array>
+        <array key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="vS1-VS-hOA">
+            <objects>
+                <viewController id="tPN-li-tJL" customClass="WeatherDetailViewController" customModule="WeatherMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tVv-bQ-IBW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-1" translatesAutoresizingMaskIntoConstraints="NO" id="bd5-qD-wof">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YA-3X-ygI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipn-wa-dNb">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4mf-YC-RIV">
+                                        <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="New York, Paris, Londres, ..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pln-1M-07I">
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="GothamNarrow-Book" family="Gotham Narrow" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tPN-li-tJL" id="DlX-LA-Fxe"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccj-la-oy7">
+                                                <rect key="frame" x="312" y="0.0" width="30" height="44"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="25"/>
+                                                <state key="normal" title=""/>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="locateAction:" destination="tPN-li-tJL" eventType="touchUpInside" id="zBT-81-Kbg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGo-uD-mOr">
+                                                <rect key="frame" x="352" y="0.0" width="30" height="44"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="25"/>
+                                                <state key="normal" title="">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="syncAction:" destination="tPN-li-tJL" eventType="touchUpInside" id="tO5-nI-TwN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBk-YU-ZSo" customClass="GradientView" customModule="WeatherMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="4"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="Jem-2w-Ikw"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                                <color key="value" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4mf-YC-RIV" secondAttribute="trailing" constant="16" id="6Aw-Py-1hW"/>
+                                    <constraint firstItem="4mf-YC-RIV" firstAttribute="leading" secondItem="ipn-wa-dNb" secondAttribute="leading" constant="16" id="6fK-Nq-hTu"/>
+                                    <constraint firstItem="4mf-YC-RIV" firstAttribute="top" secondItem="ipn-wa-dNb" secondAttribute="top" id="9Zc-SB-YYU"/>
+                                    <constraint firstAttribute="height" constant="44" id="G3V-Yd-Wwr"/>
+                                    <constraint firstAttribute="bottom" secondItem="4mf-YC-RIV" secondAttribute="bottom" id="bq2-0y-LA8"/>
+                                    <constraint firstItem="yBk-YU-ZSo" firstAttribute="top" secondItem="4mf-YC-RIV" secondAttribute="bottom" id="hBh-is-GTB"/>
+                                    <constraint firstItem="yBk-YU-ZSo" firstAttribute="leading" secondItem="ipn-wa-dNb" secondAttribute="leading" id="kCG-GE-3JX"/>
+                                    <constraint firstAttribute="trailing" secondItem="yBk-YU-ZSo" secondAttribute="trailing" id="zCv-U2-UEE"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Uq-aU-KnT">
+                                <rect key="frame" x="16" y="80" width="382" height="656"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1u-Cr-VIF">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="17.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbN-Ur-CC8">
+                                        <rect key="frame" x="0.0" y="27.666666666666671" width="382" height="28.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="GothamNarrow-Thin" family="Gotham Narrow" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxT-D9-51B">
+                                        <rect key="frame" x="0.0" y="66" width="382" height="90"/>
+                                        <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="90"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="368-lL-EOd">
+                                        <rect key="frame" x="0.0" y="166" width="382" height="184"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eiu-ID-uTM">
+                                        <rect key="frame" x="0.0" y="360" width="382" height="286"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1iR-Tq-D0w">
+                                                <rect key="frame" x="16" y="100" width="350" height="170"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dsY-J6-V0P">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ7-PH-tJb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Bold" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMm-wu-C34" userLabel="Cloudiness">
+                                                                <rect key="frame" x="180" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-V5-ke3">
+                                                        <rect key="frame" x="0.0" y="30" width="350" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudiness" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stp-kt-puY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Bold" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4H-pC-BkL" userLabel="Cloudiness">
+                                                                <rect key="frame" x="180" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cet-yR-w32">
+                                                        <rect key="frame" x="0.0" y="60" width="350" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyc-qp-qn7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Bold" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qq9-V6-Kzg">
+                                                                <rect key="frame" x="180" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D2c-wH-lKL">
+                                                        <rect key="frame" x="0.0" y="90" width="350" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfv-fE-VWs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Bold" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xy-9V-nQO">
+                                                                <rect key="frame" x="180" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XTk-bw-i6h">
+                                                        <rect key="frame" x="0.0" y="120" width="350" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xra-hZ-RfW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Bold" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFp-iA-c1w">
+                                                                <rect key="frame" x="180" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4yw-zU-vio">
+                                                        <rect key="frame" x="0.0" y="150" width="350" height="20"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCH-Ko-cX3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Bold" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoJ-EO-AeB">
+                                                                <rect key="frame" x="180" y="0.0" width="170" height="20"/>
+                                                                <fontDescription key="fontDescription" name="GothamNarrow-Light" family="Gotham Narrow" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="dsY-J6-V0P" secondAttribute="trailing" id="43F-5c-7QY"/>
+                                                    <constraint firstItem="dsY-J6-V0P" firstAttribute="leading" secondItem="1iR-Tq-D0w" secondAttribute="leading" id="WIv-AC-Jlw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4yw-zU-vio" secondAttribute="trailing" id="aXq-AG-DNa"/>
+                                                    <constraint firstItem="D2c-wH-lKL" firstAttribute="leading" secondItem="1iR-Tq-D0w" secondAttribute="leading" id="fEs-Hz-uMt"/>
+                                                    <constraint firstItem="XTk-bw-i6h" firstAttribute="leading" secondItem="1iR-Tq-D0w" secondAttribute="leading" id="li4-5s-mXr"/>
+                                                    <constraint firstItem="4yw-zU-vio" firstAttribute="leading" secondItem="1iR-Tq-D0w" secondAttribute="leading" id="m4s-ku-iP5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XTk-bw-i6h" secondAttribute="trailing" id="qr7-58-y75"/>
+                                                    <constraint firstAttribute="trailing" secondItem="D2c-wH-lKL" secondAttribute="trailing" id="tgW-Mu-kfK"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="1iR-Tq-D0w" firstAttribute="leading" secondItem="eiu-ID-uTM" secondAttribute="leading" constant="16" id="61I-fK-T1J"/>
+                                            <constraint firstAttribute="trailing" secondItem="1iR-Tq-D0w" secondAttribute="trailing" constant="16" id="QTx-lN-2sc"/>
+                                            <constraint firstAttribute="bottom" secondItem="1iR-Tq-D0w" secondAttribute="bottom" constant="16" id="uD3-b1-ZM4"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="756" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtG-HU-UeN">
+                                        <rect key="frame" x="0.0" y="656" width="382" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="368-lL-EOd" firstAttribute="leading" secondItem="3Uq-aU-KnT" secondAttribute="leading" id="9jp-oA-j5M"/>
+                                    <constraint firstAttribute="trailing" secondItem="368-lL-EOd" secondAttribute="trailing" id="t35-gp-260"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4YA-3X-ygI" firstAttribute="bottom" secondItem="ipn-wa-dNb" secondAttribute="bottom" id="7Aw-C4-oZ3"/>
+                            <constraint firstItem="sLW-Kt-TBa" firstAttribute="trailing" secondItem="bd5-qD-wof" secondAttribute="trailing" id="BXr-ef-xlX"/>
+                            <constraint firstItem="sLW-Kt-TBa" firstAttribute="bottom" secondItem="3Uq-aU-KnT" secondAttribute="bottom" id="BwG-gv-wls"/>
+                            <constraint firstAttribute="bottom" secondItem="bd5-qD-wof" secondAttribute="bottom" id="GUE-2c-UzT"/>
+                            <constraint firstItem="4YA-3X-ygI" firstAttribute="leading" secondItem="sLW-Kt-TBa" secondAttribute="leading" id="Gu7-f2-6V5"/>
+                            <constraint firstItem="3Uq-aU-KnT" firstAttribute="leading" secondItem="sLW-Kt-TBa" secondAttribute="leading" constant="16" id="Tgb-Sl-a2G"/>
+                            <constraint firstItem="bd5-qD-wof" firstAttribute="top" secondItem="tVv-bQ-IBW" secondAttribute="top" id="UhZ-4f-RVA"/>
+                            <constraint firstItem="4YA-3X-ygI" firstAttribute="top" secondItem="tVv-bQ-IBW" secondAttribute="top" id="V4e-l2-nGx"/>
+                            <constraint firstItem="sLW-Kt-TBa" firstAttribute="trailing" secondItem="3Uq-aU-KnT" secondAttribute="trailing" constant="16" id="Vhb-tw-9fA"/>
+                            <constraint firstItem="3Uq-aU-KnT" firstAttribute="top" secondItem="ipn-wa-dNb" secondAttribute="bottom" constant="16" id="guN-oq-j6A"/>
+                            <constraint firstItem="ipn-wa-dNb" firstAttribute="top" secondItem="sLW-Kt-TBa" secondAttribute="top" id="mdG-DK-lww"/>
+                            <constraint firstItem="368-lL-EOd" firstAttribute="height" secondItem="tVv-bQ-IBW" secondAttribute="height" multiplier="1:4" id="mpn-A3-p7x"/>
+                            <constraint firstItem="ipn-wa-dNb" firstAttribute="leading" secondItem="tVv-bQ-IBW" secondAttribute="leading" id="mwZ-oO-4hA"/>
+                            <constraint firstItem="sLW-Kt-TBa" firstAttribute="trailing" secondItem="4YA-3X-ygI" secondAttribute="trailing" id="mz7-do-sCC"/>
+                            <constraint firstItem="bd5-qD-wof" firstAttribute="leading" secondItem="sLW-Kt-TBa" secondAttribute="leading" id="srS-LY-q5A"/>
+                            <constraint firstAttribute="trailing" secondItem="ipn-wa-dNb" secondAttribute="trailing" id="xbb-Ha-2Ra"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sLW-Kt-TBa"/>
+                    </view>
+                    <connections>
+                        <outlet property="bgImage" destination="bd5-qD-wof" id="us2-j2-PBq"/>
+                        <outlet property="bottomInfoView" destination="eiu-ID-uTM" id="jOW-tz-xI9"/>
+                        <outlet property="cityName" destination="lbN-Ur-CC8" id="Wci-e5-23n"/>
+                        <outlet property="cloudiness" destination="o4H-pC-BkL" id="9ep-iG-ndj"/>
+                        <outlet property="humidity" destination="8Xy-9V-nQO" id="fYe-gx-HNz"/>
+                        <outlet property="iconView" destination="368-lL-EOd" id="L10-ed-xxs"/>
+                        <outlet property="lastUpdate" destination="CtG-HU-UeN" id="9V6-dN-zrc"/>
+                        <outlet property="locationButton" destination="ccj-la-oy7" id="3M4-F9-Uff"/>
+                        <outlet property="range" destination="zMm-wu-C34" id="3uY-JQ-1Tz"/>
+                        <outlet property="sunrise" destination="cFp-iA-c1w" id="BxM-Zh-rd5"/>
+                        <outlet property="sunset" destination="JoJ-EO-AeB" id="hew-f2-fSX"/>
+                        <outlet property="temperature" destination="ZxT-D9-51B" id="Dbv-Nn-hyh"/>
+                        <outlet property="windSpeed" destination="Qq9-V6-Kzg" id="CJS-V1-wE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="frl-ah-l5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="25.271739130434785"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="default-1" width="8192" height="5461"/>
+    </resources>
+</document>

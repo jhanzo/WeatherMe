@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>WeatherMe.xcscheme_^#shared#^_</key>
+		<key>Debug.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>Release.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E200AC8E22567872007C5EAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E200ACA222567874007C5EAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E200ACAD22567874007C5EAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
