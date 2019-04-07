@@ -46,6 +46,7 @@
 		E2D2EC5D225A7FA40094828B /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2EC5C225A7FA40094828B /* BackgroundImage.swift */; };
 		E2D2EC5F225A8D740094828B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E2D2EC5E225A8D740094828B /* .swiftlint.yml */; };
 		E2D2EC63225A9AC70094828B /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = E2D2EC62225A9AC70094828B /* Rakefile */; };
+		E2D2EC65225AA4330094828B /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D2EC64225AA4330094828B /* weather.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		E2D2EC5C225A7FA40094828B /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 		E2D2EC5E225A8D740094828B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E2D2EC62225A9AC70094828B /* Rakefile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Rakefile; sourceTree = "<group>"; };
+		E2D2EC64225AA4330094828B /* weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 		E200ACA622567874007C5EAE /* WeatherMeTests */ = {
 			isa = PBXGroup;
 			children = (
+				E2D2EC66225AA4430094828B /* Mocks */,
 				E200ACA922567874007C5EAE /* Info.plist */,
 				E200ACA722567874007C5EAE /* WeatherMeTests.swift */,
 			);
@@ -376,6 +379,14 @@
 			path = Identifiers;
 			sourceTree = "<group>";
 		};
+		E2D2EC66225AA4430094828B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E2D2EC64225AA4330094828B /* weather.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +525,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D2EC65225AA4330094828B /* weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

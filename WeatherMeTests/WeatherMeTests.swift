@@ -12,22 +12,29 @@ import XCTest
 class WeatherMeTests: XCTestCase {
 
     override func setUp() {
+        super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDown() {
+        super.tearDown()
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testValidWeather() {
+    func testSimpleWeather() {
+        let url = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
+        let data = try! Data(contentsOf: url, options: .mappedIfSafe)
+        let weatherJson = try! JSONDecoder().decode(Weather.self, from: data)
+        let weatherDTO = WeatherDTO(weather: weatherJson)
 
+        // test non localized
+        assert(weatherDTO.cityName == "Brest")
+        assert(weatherDTO.temperature == "7°C")
+        assert(weatherDTO.cloudiness == "0%")
+        assert(weatherDTO.windSpeed == "2.1 m/s")
+        assert(weatherDTO.humidity == "93%")
+        assert(weatherDTO.temperatureRange == "5°C...10°C")
+        assert(weatherDTO.humidity == "93%")
+        assert(weatherDTO.pressure == "1008 hPa")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

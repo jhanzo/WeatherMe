@@ -64,9 +64,9 @@ struct WeatherDTO {
         self.temperature = "\(Int(weather.main.temp))°C"
         self.temperatureRange = "\(Int(weather.main.tempMin))°C...\(Int(weather.main.tempMax))°C"
         self.humidity = "\(weather.main.humidity)%"
-        self.pressure = "\(weather.main.pressure) hPa"
+        self.pressure = "\(Int(weather.main.pressure)) hPa"
         let speed = weather.wind?.speed ?? 0.0
-        self.windSpeed = "\(speed) km/h"
+        self.windSpeed = "\(speed) m/s"
         self.icon = weather.weather.first?.icon ?? "00"
         self.location = CLLocation(latitude: weather.coord.lat, longitude: weather.coord.lon)
         // date management
